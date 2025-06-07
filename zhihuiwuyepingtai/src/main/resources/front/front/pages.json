@@ -1,0 +1,475 @@
+{
+	"pages": [{
+		"path": "pages/login/login",
+		"style": {
+			"navigationBarBackgroundColor": "#45BBE8",
+			"navigationBarTextStyle": "white",
+			"navigationBarTitleText": "登录"
+		}
+	},{
+		"path": "pages/register/register",
+		"style": {
+			"navigationBarBackgroundColor": "#45BBE8",
+			"navigationBarTextStyle": "white",
+			"navigationBarTitleText": "注册"
+		}
+	},{
+		"path": "pages/forget/forget",
+		"style": {
+			"navigationBarBackgroundColor": "#45BBE8",
+			"navigationBarTextStyle": "white",
+			"navigationBarTitleText": "忘记密码"
+		}
+		},
+		{
+		"path": "pages/changepassword/changepassword",
+		"style": {
+		"navigationBarBackgroundColor": "#45BBE8",
+		"navigationBarTextStyle": "white",
+		"navigationBarTitleText": "修改密码"
+			}
+		},
+		{
+		"path": "pages/center/center",
+		"style": {
+			"navigationBarBackgroundColor": "#45BBE8",
+			"navigationBarTextStyle": "white",
+			"navigationBarTitleText": "我的"
+		}
+	},{
+		"path": "pages/user-info/userinfo",
+		"style": {
+			"navigationBarBackgroundColor": "#45BBE8",
+			"navigationBarTextStyle": "white",
+			"navigationBarTitleText": "用户信息"
+		}
+	}
+		,{
+			"path": "pages/recharge/recharge",
+			"style": {
+				"navigationBarBackgroundColor": "#45BBE8",
+				"navigationBarTextStyle": "white",
+				"navigationBarTitleText": "充值"
+			}
+		}
+
+	,{
+		"path": "pages/baoxiu/list",
+		"style": {
+			"navigationBarBackgroundColor": "#45BBE8",
+			"navigationBarTextStyle": "white",
+			"navigationBarTitleText": "报修展示"
+		}
+	},{
+		"path": "pages/baoxiu/list2",
+		"style": {
+			"navigationBarBackgroundColor": "#45BBE8",
+			"navigationBarTextStyle": "white",
+			"navigationBarTitleText": "我的报修"
+		}
+	},{
+		"path": "pages/baoxiu/add-or-update",
+		"style": {
+			"navigationBarBackgroundColor": "#45BBE8",
+			"navigationBarTextStyle": "white",
+			"navigationBarTitleText": "报修添加/修改"
+		}
+	},{
+		"path": "pages/baoxiu/detail",
+		"style": {
+			"navigationBarBackgroundColor": "#45BBE8",
+			"navigationBarTextStyle": "white",
+			"navigationBarTitleText": "报修详情"
+		}
+	},{
+		"path": "pages/bianmin/list",
+		"style": {
+			"navigationBarBackgroundColor": "#45BBE8",
+			"navigationBarTextStyle": "white",
+			"navigationBarTitleText": "便民服务展示"
+		}
+	},{
+		"path": "pages/bianmin/list2",
+		"style": {
+			"navigationBarBackgroundColor": "#45BBE8",
+			"navigationBarTextStyle": "white",
+			"navigationBarTitleText": "我的便民服务"
+		}
+	},{
+		"path": "pages/bianmin/add-or-update",
+		"style": {
+			"navigationBarBackgroundColor": "#45BBE8",
+			"navigationBarTextStyle": "white",
+			"navigationBarTitleText": "便民服务添加/修改"
+		}
+	},{
+		"path": "pages/bianmin/detail",
+		"style": {
+			"navigationBarBackgroundColor": "#45BBE8",
+			"navigationBarTextStyle": "white",
+			"navigationBarTitleText": "便民服务详情"
+		}
+	}
+	,{
+		"path": "pages/chat/list",
+		"style": {
+			"navigationBarBackgroundColor": "#45BBE8",
+			"navigationBarTextStyle": "white",
+			"navigationBarTitleText": "投诉管理展示"
+		}
+	},{
+		"path": "pages/chat/list2",
+		"style": {
+			"navigationBarBackgroundColor": "#45BBE8",
+			"navigationBarTextStyle": "white",
+			"navigationBarTitleText": "我的投诉管理"
+		}
+	},{
+		"path": "pages/chat/add-or-update",
+		"style": {
+			"navigationBarBackgroundColor": "#45BBE8",
+			"navigationBarTextStyle": "white",
+			"navigationBarTitleText": "投诉管理添加/修改"
+		}
+	},{
+		"path": "pages/chat/detail",
+		"style": {
+			"navigationBarBackgroundColor": "#45BBE8",
+			"navigationBarTextStyle": "white",
+			"navigationBarTitleText": "投诉管理详情"
+		}
+	}
+	,{
+		"path": "pages/chewei/list",
+		"style": {
+			"navigationBarBackgroundColor": "#45BBE8",
+			"navigationBarTextStyle": "white",
+			"navigationBarTitleText": "车位展示"
+		}
+	},{
+		"path": "pages/chewei/list2",
+		"style": {
+			"navigationBarBackgroundColor": "#45BBE8",
+			"navigationBarTextStyle": "white",
+			"navigationBarTitleText": "我的车位"
+		}
+	},{
+		"path": "pages/chewei/add-or-update",
+		"style": {
+			"navigationBarBackgroundColor": "#45BBE8",
+			"navigationBarTextStyle": "white",
+			"navigationBarTitleText": "车位添加/修改"
+		}
+	},{
+		"path": "pages/chewei/detail",
+		"style": {
+			"navigationBarBackgroundColor": "#45BBE8",
+			"navigationBarTextStyle": "white",
+			"navigationBarTitleText": "车位详情"
+		}
+	}
+	,{
+		"path": "pages/cheweiOrder/list",
+		"style": {
+			"navigationBarTitleText": "车位订单"
+		}
+	},{
+		"path": "pages/cheweiOrder/confirm",
+		"style": {
+			"navigationBarTitleText": "订单确认"
+		}
+	}
+	,{
+		"path": "pages/fangwu/list",
+		"style": {
+			"navigationBarBackgroundColor": "#45BBE8",
+			"navigationBarTextStyle": "white",
+			"navigationBarTitleText": "房屋展示"
+		}
+	},{
+		"path": "pages/fangwu/list2",
+		"style": {
+			"navigationBarBackgroundColor": "#45BBE8",
+			"navigationBarTextStyle": "white",
+			"navigationBarTitleText": "我的房屋"
+		}
+	},{
+		"path": "pages/fangwu/add-or-update",
+		"style": {
+			"navigationBarBackgroundColor": "#45BBE8",
+			"navigationBarTextStyle": "white",
+			"navigationBarTitleText": "房屋添加/修改"
+		}
+	},{
+		"path": "pages/fangwu/detail",
+		"style": {
+			"navigationBarBackgroundColor": "#45BBE8",
+			"navigationBarTextStyle": "white",
+			"navigationBarTitleText": "房屋详情"
+		}
+	}
+	,{
+		"path": "pages/gonggao/list",
+		"style": {
+			"navigationBarBackgroundColor": "#45BBE8",
+			"navigationBarTextStyle": "white",
+			"navigationBarTitleText": "公告展示"
+		}
+	},{
+		"path": "pages/gonggao/list2",
+		"style": {
+			"navigationBarBackgroundColor": "#45BBE8",
+			"navigationBarTextStyle": "white",
+			"navigationBarTitleText": "我的公告"
+		}
+	},{
+		"path": "pages/gonggao/add-or-update",
+		"style": {
+			"navigationBarBackgroundColor": "#45BBE8",
+			"navigationBarTextStyle": "white",
+			"navigationBarTitleText": "公告添加/修改"
+		}
+	},{
+		"path": "pages/gonggao/detail",
+		"style": {
+			"navigationBarBackgroundColor": "#45BBE8",
+			"navigationBarTextStyle": "white",
+			"navigationBarTitleText": "公告详情"
+		}
+	}
+	,{
+		"path": "pages/jiaofei/list",
+		"style": {
+			"navigationBarBackgroundColor": "#45BBE8",
+			"navigationBarTextStyle": "white",
+			"navigationBarTitleText": "缴费展示"
+		}
+	},{
+		"path": "pages/jiaofei/list2",
+		"style": {
+			"navigationBarBackgroundColor": "#45BBE8",
+			"navigationBarTextStyle": "white",
+			"navigationBarTitleText": "我的缴费"
+		}
+	},{
+		"path": "pages/jiaofei/add-or-update",
+		"style": {
+			"navigationBarBackgroundColor": "#45BBE8",
+			"navigationBarTextStyle": "white",
+			"navigationBarTitleText": "缴费添加/修改"
+		}
+	},{
+		"path": "pages/jiaofei/detail",
+		"style": {
+			"navigationBarBackgroundColor": "#45BBE8",
+			"navigationBarTextStyle": "white",
+			"navigationBarTitleText": "缴费详情"
+		}
+	}
+	,{
+		"path": "pages/weixui/list",
+		"style": {
+			"navigationBarBackgroundColor": "#45BBE8",
+			"navigationBarTextStyle": "white",
+			"navigationBarTitleText": "维修指派展示"
+		}
+	},{
+		"path": "pages/weixui/list2",
+		"style": {
+			"navigationBarBackgroundColor": "#45BBE8",
+			"navigationBarTextStyle": "white",
+			"navigationBarTitleText": "我的维修指派"
+		}
+	},{
+		"path": "pages/weixui/add-or-update",
+		"style": {
+			"navigationBarBackgroundColor": "#45BBE8",
+			"navigationBarTextStyle": "white",
+			"navigationBarTitleText": "维修指派添加/修改"
+		}
+	},{
+		"path": "pages/weixui/detail",
+		"style": {
+			"navigationBarBackgroundColor": "#45BBE8",
+			"navigationBarTextStyle": "white",
+			"navigationBarTitleText": "维修指派详情"
+		}
+	},{
+		"path": "pages/exampapertopic/list",
+		"style": {
+			"navigationBarBackgroundColor": "#45BBE8",
+			"navigationBarTextStyle": "white",
+			"navigationBarTitleText": "试卷选题展示"
+		}
+	},{
+		"path": "pages/exampapertopic/list2",
+		"style": {
+			"navigationBarBackgroundColor": "#45BBE8",
+			"navigationBarTextStyle": "white",
+			"navigationBarTitleText": "我的试卷选题"
+		}
+	},{
+		"path": "pages/exampapertopic/add-or-update",
+		"style": {
+			"navigationBarBackgroundColor": "#45BBE8",
+			"navigationBarTextStyle": "white",
+			"navigationBarTitleText": "试卷选题添加/修改"
+		}
+	},{
+		"path": "pages/exampapertopic/detail",
+		"style": {
+			"navigationBarBackgroundColor": "#45BBE8",
+			"navigationBarTextStyle": "white",
+			"navigationBarTitleText": "试卷选题详情"
+		}
+	}
+	,{
+		"path": "pages/yonghu/list",
+		"style": {
+			"navigationBarBackgroundColor": "#45BBE8",
+			"navigationBarTextStyle": "white",
+			"navigationBarTitleText": "用户展示"
+		}
+	},{
+		"path": "pages/yonghu/list2",
+		"style": {
+			"navigationBarBackgroundColor": "#45BBE8",
+			"navigationBarTextStyle": "white",
+			"navigationBarTitleText": "我的用户"
+		}
+	},{
+		"path": "pages/yonghu/add-or-update",
+		"style": {
+			"navigationBarBackgroundColor": "#45BBE8",
+			"navigationBarTextStyle": "white",
+			"navigationBarTitleText": "用户添加/修改"
+		}
+	},{
+		"path": "pages/yonghu/detail",
+		"style": {
+			"navigationBarBackgroundColor": "#45BBE8",
+			"navigationBarTextStyle": "white",
+			"navigationBarTitleText": "用户详情"
+		}
+	}
+	,{
+		"path": "pages/yuangong/list",
+		"style": {
+			"navigationBarBackgroundColor": "#45BBE8",
+			"navigationBarTextStyle": "white",
+			"navigationBarTitleText": "员工展示"
+		}
+	},{
+		"path": "pages/yuangong/list2",
+		"style": {
+			"navigationBarBackgroundColor": "#45BBE8",
+			"navigationBarTextStyle": "white",
+			"navigationBarTitleText": "我的员工"
+		}
+	},{
+		"path": "pages/yuangong/add-or-update",
+		"style": {
+			"navigationBarBackgroundColor": "#45BBE8",
+			"navigationBarTextStyle": "white",
+			"navigationBarTitleText": "员工添加/修改"
+		}
+	},{
+		"path": "pages/yuangong/detail",
+		"style": {
+			"navigationBarBackgroundColor": "#45BBE8",
+			"navigationBarTextStyle": "white",
+			"navigationBarTitleText": "员工详情"
+		}
+	},{
+		"path": "pages/exampaper/list",
+		"style": {
+			"navigationBarBackgroundColor": "#45BBE8",
+			"navigationBarTextStyle": "white",
+			"navigationBarTitleText": "试卷列表"
+		}
+	},{
+		"path": "pages/exampaper/exam",
+		"style": {
+			"navigationStyle": "custom"
+		}
+	},{
+		"path": "pages/examrecord/list",
+		"style": {
+			"navigationBarBackgroundColor": "#45BBE8",
+			"navigationBarTextStyle": "white",
+			"navigationBarTitleText": "考试记录"
+		}
+	},{
+		"path": "pages/examrecord/detail",
+		"style": {
+			"navigationBarBackgroundColor": "#45BBE8",
+			"navigationBarTextStyle": "white",
+			"navigationBarTitleText": "考试记录"
+		}
+	},{
+		"path": "pages/examrewrongquestion/list",
+		"style": {
+			"navigationBarBackgroundColor": "#45BBE8",
+			"navigationBarTextStyle": "white",
+			"navigationBarTitleText": "错题本"
+		}
+	}
+			,{
+		"path": "pages/index/index",
+		"style": {
+			"navigationBarBackgroundColor": "#45BBE8",
+			"navigationBarTextStyle": "white",
+			"navigationBarTitleText": "智慧物业平台首页"
+		}
+	}
+	],
+	"globalStyle": {
+		"navigationBarTextStyle": "black",
+		"navigationBarTitleText": "智慧物业平台",
+		"navigationBarBackgroundColor": "#F8F8F8",
+		"backgroundColor": "#F8F8F8"
+	},
+	"tabBar": {
+		"color": "#FFFFFF",
+		"selectedColor": "#fff",
+		"borderStyle": "black",
+		"backgroundColor": "#6ec8e3",
+		"list": [{
+				"pagePath": "pages/index/index",
+				"iconPath": "static/tabs/index.png",
+				"selectedIconPath": "static/tabs/index1.png",
+				"text": "首页"
+			}
+			,{
+				"pagePath": "pages/chewei/list",
+				"iconPath": "static/tabs/type.png",
+				"selectedIconPath": "static/tabs/type1.png",
+				"text": "车位"
+			}
+			,{
+				"pagePath": "pages/fangwu/list",
+				"iconPath": "static/tabs/type.png",
+				"selectedIconPath": "static/tabs/type1.png",
+				"text": "房屋"
+			}
+			,{
+				"pagePath": "pages/gonggao/list",
+				"iconPath": "static/tabs/type.png",
+				"selectedIconPath": "static/tabs/type1.png",
+				"text": "公告"
+			}
+			,{
+				"pagePath": "pages/center/center",
+				"iconPath": "static/tabs/mine.png",
+				"selectedIconPath": "static/tabs/mine1.png",
+				"text": "我的"
+			}
+		]
+	}
+	// "permission": {
+	// 	"scope.userLocation": {
+	// 		"desc": ""
+	// 	}
+	// },
+	// "requiredPrivateInfos": ["getLocation", "chooseLocation"]
+}

@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dao.WeixuiDao">
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        a.id as id
+        ,a.baoxiu_id as baoxiuId
+        ,a.yuangong_id as yuangongId
+        ,a.insert_time as insertTime
+        ,a.weixui_text as weixuiText
+        ,a.create_time as createTime
+    </sql>
+    <select id="selectListView" parameterType="map" resultType="com.entity.view.WeixuiView" >
+        SELECT
+        <include refid="Base_Column_List" />
+        <!-- 级联表的字段 -->
+        ,baoxiu.yonghu_id as baoxiuYonghuId
+        ,baoxiu.baoxiu_name as baoxiuName
+        ,baoxiu.baoxiu_photo as baoxiuPhoto
+        ,baoxiu.baoxiu_types as baoxiuTypes
+        ,baoxiu.baoxiu_zhuangtai_types as baoxiuZhuangtaiTypes
+        ,baoxiu.baoxiu_content as baoxiuContent
+        ,yuangong.yuangong_name as yuangongName
+        ,yuangong.yuangong_phone as yuangongPhone
+        ,yuangong.yuangong_id_number as yuangongIdNumber
+        ,yuangong.yuangong_photo as yuangongPhoto
+
+        FROM weixui  a
+        left JOIN baoxiu baoxiu ON a.baoxiu_id = baoxiu.id
+        left JOIN yuangong yuangong ON a.yuangong_id = yuangong.id
+
+        <where>
+            <if test="params.ids != null">
+                and a.id in
+                <foreach item="item" index="index" collection="params.ids" open="(" separator="," close=")">
+                #{item}
+                </foreach>
+            </if>
+            <if test="params.baoxiuId != null and params.baoxiuId != ''">
+                and (
+                    a.baoxiu_id = #{params.baoxiuId}
+                )
+            </if>
+            <if test="params.yuangongId != null and params.yuangongId != ''">
+                and (
+                    a.yuangong_id = #{params.yuangongId}
+                )
+            </if>
+            <if test=" params.insertTimeStart != '' and params.insertTimeStart != null ">
+                <![CDATA[  and UNIX_TIMESTAMP(a.insert_time) >= UNIX_TIMESTAMP(#{params.insertTimeStart}) ]]>
+            </if>
+            <if test=" params.insertTimeEnd != '' and params.insertTimeEnd != null ">
+                <![CDATA[  and UNIX_TIMESTAMP(a.insert_time) <= UNIX_TIMESTAMP(#{params.insertTimeEnd}) ]]>
+            </if>
+            <if test="params.insertTime != null and params.insertTime != ''">
+                and a.insert_time = #{params.insertTime}
+            </if>
+            <if test=" params.weixuiText != '' and params.weixuiText != null and params.weixuiText != 'null' ">
+                and a.weixui_text like CONCAT('%',#{params.weixuiText},'%')
+            </if>
+
+                <!-- 判断报修的id不为空 -->
+            <if test=" params.baoxiuIdNotNull != '' and params.baoxiuIdNotNull != null and params.baoxiuIdNotNull != 'null' ">
+                and a.baoxiu_id IS NOT NULL
+            </if>
+            <if test="params.yonghuId != null  and params.yonghuId != ''">
+                and baoxiu.yonghu_id = #{params.yonghuId}
+            </if>
+            <if test=" params.baoxiuName != '' and params.baoxiuName != null and params.baoxiuName != 'null' ">
+                and baoxiu.baoxiu_name like CONCAT('%',#{params.baoxiuName},'%')
+            </if>
+            <if test="params.baoxiuTypes != null  and params.baoxiuTypes != ''">
+                and baoxiu.baoxiu_types = #{params.baoxiuTypes}
+            </if>
+
+            <if test=" params.insertTimeStart != '' and params.insertTimeStart != null ">
+                <![CDATA[  and UNIX_TIMESTAMP(baoxiu.insert_time) >= UNIX_TIMESTAMP(#{params.insertTimeStart}) ]]>
+            </if>
+            <if test=" params.insertTimeEnd != '' and params.insertTimeEnd != null ">
+                <![CDATA[  and UNIX_TIMESTAMP(baoxiu.insert_time) <= UNIX_TIMESTAMP(#{params.insertTimeEnd}) ]]>
+            </if>
+            <if test="params.insertTime != null and params.insertTime != ''">
+                and a.insert_time = #{params.insertTime}
+            </if>
+            <if test="params.baoxiuZhuangtaiTypes != null  and params.baoxiuZhuangtaiTypes != ''">
+                and baoxiu.baoxiu_zhuangtai_types = #{params.baoxiuZhuangtaiTypes}
+            </if>
+
+            <if test=" params.baoxiuContent != '' and params.baoxiuContent != null and params.baoxiuContent != 'null' ">
+                and baoxiu.baoxiu_content like CONCAT('%',#{params.baoxiuContent},'%')
+            </if>
+                <!-- 判断员工的id不为空 -->
+            <if test=" params.yuangongIdNotNull != '' and params.yuangongIdNotNull != null and params.yuangongIdNotNull != 'null' ">
+                and a.yuangong_id IS NOT NULL
+            </if>
+            <if test=" params.yuangongName != '' and params.yuangongName != null and params.yuangongName != 'null' ">
+                and yuangong.yuangong_name like CONCAT('%',#{params.yuangongName},'%')
+            </if>
+            <if test=" params.yuangongPhone != '' and params.yuangongPhone != null and params.yuangongPhone != 'null' ">
+                and yuangong.yuangong_phone like CONCAT('%',#{params.yuangongPhone},'%')
+            </if>
+            <if test=" params.yuangongIdNumber != '' and params.yuangongIdNumber != null and params.yuangongIdNumber != 'null' ">
+                and yuangong.yuangong_id_number like CONCAT('%',#{params.yuangongIdNumber},'%')
+            </if>
+        </where>
+        order by a.${params.sort} ${params.order}
+    </select>
+
+</mapper>

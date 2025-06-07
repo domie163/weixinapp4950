@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dao.BianminDao">
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        a.id as id
+        ,a.bianmin_name as bianminName
+        ,a.bianmin_uuid_number as bianminUuidNumber
+        ,a.bianmin_photo as bianminPhoto
+        ,a.bianmin_address as bianminAddress
+        ,a.bianmin_types as bianminTypes
+        ,a.bianmin_content as bianminContent
+        ,a.bianmin_delete as bianminDelete
+        ,a.insert_time as insertTime
+        ,a.create_time as createTime
+    </sql>
+    <select id="selectListView" parameterType="map" resultType="com.entity.view.BianminView" >
+        SELECT
+        <include refid="Base_Column_List" />
+        <!-- 级联表的字段 -->
+
+        FROM bianmin  a
+
+        <where>
+            <if test="params.ids != null">
+                and a.id in
+                <foreach item="item" index="index" collection="params.ids" open="(" separator="," close=")">
+                #{item}
+                </foreach>
+            </if>
+            <if test=" params.bianminName != '' and params.bianminName != null and params.bianminName != 'null' ">
+                and a.bianmin_name like CONCAT('%',#{params.bianminName},'%')
+            </if>
+            <if test=" params.bianminUuidNumber != '' and params.bianminUuidNumber != null and params.bianminUuidNumber != 'null' ">
+                and a.bianmin_uuid_number like CONCAT('%',#{params.bianminUuidNumber},'%')
+            </if>
+            <if test=" params.bianminAddress != '' and params.bianminAddress != null and params.bianminAddress != 'null' ">
+                and a.bianmin_address like CONCAT('%',#{params.bianminAddress},'%')
+            </if>
+            <if test="params.bianminTypes != null and params.bianminTypes != ''">
+                and a.bianmin_types = #{params.bianminTypes}
+            </if>
+            <if test=" params.bianminContent != '' and params.bianminContent != null and params.bianminContent != 'null' ">
+                and a.bianmin_content like CONCAT('%',#{params.bianminContent},'%')
+            </if>
+            <if test="params.bianminDeleteStart != null and params.bianminDeleteStart != ''">
+                <![CDATA[  and a.bianmin_delete >= #{params.bianminDeleteStart}   ]]>
+            </if>
+            <if test="params.bianminDeleteEnd != null and params.bianminDeleteEnd != ''">
+                <![CDATA[  and a.bianmin_delete <= #{params.bianminDeleteEnd}   ]]>
+            </if>
+             <if test="params.bianminDelete != null and params.bianminDelete != ''">
+                and a.bianmin_delete = #{params.bianminDelete}
+             </if>
+            <if test=" params.insertTimeStart != '' and params.insertTimeStart != null ">
+                <![CDATA[  and UNIX_TIMESTAMP(a.insert_time) >= UNIX_TIMESTAMP(#{params.insertTimeStart}) ]]>
+            </if>
+            <if test=" params.insertTimeEnd != '' and params.insertTimeEnd != null ">
+                <![CDATA[  and UNIX_TIMESTAMP(a.insert_time) <= UNIX_TIMESTAMP(#{params.insertTimeEnd}) ]]>
+            </if>
+            <if test="params.insertTime != null and params.insertTime != ''">
+                and a.insert_time = #{params.insertTime}
+            </if>
+
+        </where>
+        order by a.${params.sort} ${params.order}
+    </select>
+
+</mapper>

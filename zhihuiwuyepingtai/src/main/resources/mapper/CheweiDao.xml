@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dao.CheweiDao">
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        a.id as id
+        ,a.chewei_name as cheweiName
+        ,a.chewei_uuid_number as cheweiUuidNumber
+        ,a.chewei_photo as cheweiPhoto
+        ,a.chewei_address as cheweiAddress
+        ,a.chewei_types as cheweiTypes
+        ,a.chewei_zhuangtai_types as cheweiZhuangtaiTypes
+        ,a.chewei_new_money as cheweiNewMoney
+        ,a.chewei_content as cheweiContent
+        ,a.chewei_delete as cheweiDelete
+        ,a.insert_time as insertTime
+        ,a.create_time as createTime
+    </sql>
+    <select id="selectListView" parameterType="map" resultType="com.entity.view.CheweiView" >
+        SELECT
+        <include refid="Base_Column_List" />
+        <!-- 级联表的字段 -->
+
+        FROM chewei  a
+
+        <where>
+            <if test="params.ids != null">
+                and a.id in
+                <foreach item="item" index="index" collection="params.ids" open="(" separator="," close=")">
+                #{item}
+                </foreach>
+            </if>
+            <if test=" params.cheweiName != '' and params.cheweiName != null and params.cheweiName != 'null' ">
+                and a.chewei_name like CONCAT('%',#{params.cheweiName},'%')
+            </if>
+            <if test=" params.cheweiUuidNumber != '' and params.cheweiUuidNumber != null and params.cheweiUuidNumber != 'null' ">
+                and a.chewei_uuid_number like CONCAT('%',#{params.cheweiUuidNumber},'%')
+            </if>
+            <if test=" params.cheweiAddress != '' and params.cheweiAddress != null and params.cheweiAddress != 'null' ">
+                and a.chewei_address like CONCAT('%',#{params.cheweiAddress},'%')
+            </if>
+            <if test="params.cheweiTypes != null and params.cheweiTypes != ''">
+                and a.chewei_types = #{params.cheweiTypes}
+            </if>
+            <if test="params.cheweiZhuangtaiTypes != null and params.cheweiZhuangtaiTypes != ''">
+                and a.chewei_zhuangtai_types = #{params.cheweiZhuangtaiTypes}
+            </if>
+            <if test="params.cheweiNewMoneyStart != null ">
+                <![CDATA[  and a.chewei_new_money >= #{params.cheweiNewMoneyStart}   ]]>
+            </if>
+            <if test="params.cheweiNewMoneyEnd != null ">
+                <![CDATA[  and a.chewei_new_money <= #{params.cheweiNewMoneyEnd}   ]]>
+            </if>
+            <if test="params.cheweiNewMoney != null and params.cheweiNewMoney != ''">
+                and a.chewei_new_money = #{params.cheweiNewMoney}
+            </if>
+            <if test=" params.cheweiContent != '' and params.cheweiContent != null and params.cheweiContent != 'null' ">
+                and a.chewei_content like CONCAT('%',#{params.cheweiContent},'%')
+            </if>
+            <if test="params.cheweiDeleteStart != null and params.cheweiDeleteStart != ''">
+                <![CDATA[  and a.chewei_delete >= #{params.cheweiDeleteStart}   ]]>
+            </if>
+            <if test="params.cheweiDeleteEnd != null and params.cheweiDeleteEnd != ''">
+                <![CDATA[  and a.chewei_delete <= #{params.cheweiDeleteEnd}   ]]>
+            </if>
+             <if test="params.cheweiDelete != null and params.cheweiDelete != ''">
+                and a.chewei_delete = #{params.cheweiDelete}
+             </if>
+            <if test=" params.insertTimeStart != '' and params.insertTimeStart != null ">
+                <![CDATA[  and UNIX_TIMESTAMP(a.insert_time) >= UNIX_TIMESTAMP(#{params.insertTimeStart}) ]]>
+            </if>
+            <if test=" params.insertTimeEnd != '' and params.insertTimeEnd != null ">
+                <![CDATA[  and UNIX_TIMESTAMP(a.insert_time) <= UNIX_TIMESTAMP(#{params.insertTimeEnd}) ]]>
+            </if>
+            <if test="params.insertTime != null and params.insertTime != ''">
+                and a.insert_time = #{params.insertTime}
+            </if>
+
+        </where>
+        order by a.${params.sort} ${params.order}
+    </select>
+
+</mapper>
